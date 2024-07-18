@@ -16,6 +16,8 @@ wallet = "~/.config/solana/id.json"
 
 [scripts]
 test = "../node_modules/.bin/nx run anchor:jest"
+create-player = "ts-node scripts/create_players.ts"
+read-player = "ts-node scripts/read_players.ts"
 
 [test]
 startup_wait = 5000

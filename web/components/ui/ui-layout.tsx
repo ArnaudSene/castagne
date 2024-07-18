@@ -190,3 +190,33 @@ export function useTransactionToast() {
     );
   };
 }
+
+
+export function useErrorToast() {
+  return (message: string) => {
+    toast.error(
+      <div className={'text-center'}>
+      {message}
+      </div>
+      ,{
+        position: 'bottom-center',
+        duration: 2000
+      }
+    );
+  };
+}
+
+export function useCustomToast() {
+  return (message: string) => {
+    toast.custom((t) => (
+      <div className={`bg-slate-950 text-red-500 rounded border border-slate-800 p-2 max-w-xl
+        text-center
+        ${t.visible ? 'animate-enter' : 'animate-leave'}`}>
+        {message}
+      </div>
+    ), {
+      position: 'bottom-center',
+      duration: 2000,
+    });
+  };
+}
